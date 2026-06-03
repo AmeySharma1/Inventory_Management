@@ -165,7 +165,7 @@ export default function UsersPage() {
 
   const admins  = users.filter(u => u.role === "admin");
   const sellers = users.filter(u => u.role === "seller");
-  const buyers  = users.filter(u => u.role === "seller" && (u.total_orders ?? 0) > 0);
+  const buyers  = users.filter(u => u.role === "buyer" && (u.total_orders ?? 0) > 0);
 
   return (
     <div className="max-w-7xl mx-auto space-y-6 animate-fade-in-up">
@@ -210,7 +210,7 @@ export default function UsersPage() {
             className="glass-input w-full pl-9 pr-4 py-2.5 rounded-xl text-sm" />
         </div>
         <div className="flex gap-1 p-1 glass rounded-xl">
-          {["All", "admin", "seller"].map(r => (
+          {["All", "admin", "seller", "buyer"].map(r => (
             <button key={r} onClick={() => setRoleFilter(r)}
               className={`px-4 py-2 rounded-lg text-xs font-semibold capitalize transition-all ${
                 roleFilter === r ? "btn-primary" : "text-white/40 hover:text-white/70"
@@ -264,8 +264,8 @@ export default function UsersPage() {
                         </div>
                       </td>
                       <td>
-                        <span className={`badge ${u.role === "admin" ? "badge-purple" : "badge-cyan"}`}>
-                          {u.role === "admin" ? "🛡 Admin" : "🧑‍💼 Seller"}
+                        <span className={`badge ${u.role === "admin" ? "badge-purple" : u.role === "buyer" ? "badge-emerald" : "badge-cyan"}`}>
+                          {u.role === "admin" ? "🛡 Admin" : u.role === "buyer" ? "🛒 Buyer" : "🧑‍💼 Seller"}
                         </span>
                       </td>
                       <td className="text-right text-sm font-semibold text-white">{u.total_orders ?? 0}</td>
