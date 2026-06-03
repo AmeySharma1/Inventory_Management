@@ -10,6 +10,7 @@ const ROLES = [
     label: "Admin",
     tagline: "System Administrator",
     description: "Full control over inventory, users, orders and system configuration.",
+    credentials: "Use email: ameysharma0220@gmail.com and password: 12345678 to sign in.",
     features: ["Manage products & stock", "Approve quotations", "Manage all users", "Full analytics access"],
     color: "#7c3aed",
     gradient: "from-purple-600/25 to-purple-900/10",
@@ -132,6 +133,11 @@ export default function LandingClient() {
                 <h3 className="text-lg font-bold text-white">{role.label}</h3>
                 <p className="text-xs font-medium mt-0.5" style={{ color: role.color }}>{role.tagline}</p>
                 <p className="text-white/45 text-sm mt-2 leading-relaxed">{role.description}</p>
+                {role.credentials && (
+                  <p className="text-xs text-white/40 mt-2 leading-relaxed border-l-2 border-white/10 pl-3">
+                    {role.credentials}
+                  </p>
+                )}
               </div>
 
               {/* Feature list */}

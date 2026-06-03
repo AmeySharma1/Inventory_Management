@@ -79,8 +79,8 @@ export default function BuyerDashboard() {
           <h3 className="text-sm font-semibold text-white">Quick Start</h3>
           <p className="text-sm text-white/55">Your buyer portal is ready. Use your dashboard to monitor quotes and order status from sellers.</p>
           <div className="space-y-3">
-            <a href="/sign-in" className="block btn-secondary text-center py-3 rounded-xl">Sign in again</a>
-            <a href="/" className="block btn-primary text-center py-3 rounded-xl">Return to home</a>
+            <a href="/buyer/products" className="block btn-primary text-center py-3 rounded-xl">Browse Products</a>
+            <a href="/buyer/orders" className="block btn-secondary text-center py-3 rounded-xl">View My Orders</a>
           </div>
         </div>
       </div>

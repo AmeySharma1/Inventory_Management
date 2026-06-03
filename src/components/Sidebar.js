@@ -92,7 +92,7 @@ export default function Sidebar({ role = "admin" }) {
 
   const handleSignOut = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/sign-in");
+    router.push("/");
   };
 
   const displayName = user?.name || (role === "admin" ? "Admin" : role === "seller" ? "Seller" : "Buyer");
